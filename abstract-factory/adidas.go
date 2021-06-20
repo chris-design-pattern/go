@@ -12,8 +12,8 @@ func (a *adidas) makeShoe() iShoe {
 }
 
 func (a *adidas) makeShirt() iShirt {
-	return &adidasShirt {
-		shirt: shirt {
+	return &adidasShirt{
+		shirt: shirt{
 			logo: "adidas",
 			size:14,
 		},
