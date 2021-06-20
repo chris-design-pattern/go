@@ -1,4 +1,4 @@
-package FactoryMethod
+package main
 
 type musket struct {
 	gun

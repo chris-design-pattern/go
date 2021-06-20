@@ -1,10 +1,10 @@
-package FactoryMethod
+package main
 
 import (
 	"fmt"
 )
 
-func Test() {
+func main() {
 	ak47, _ := getGun("ak47")
 	musket, _ := getGun("musket")
 
