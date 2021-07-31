@@ -8,9 +8,9 @@ Proxy
 
 ## Structure
 ![](https://images.velog.io/images/chrishan/post/ea5c84ec-d8ec-4e17-8b1f-873b319f981a/structure-indexed-2x.png)
-1. **Service Interface**는 서비스의 인터페이스를 선언합니다. Proxy는 서비스 개체로 위장할 수 있도록 이 인터페이스를 따라야 합니다.<br />
-2. **Service**는 몇 가지 유용한 비즈니스 로직을 제공하는 클래스입니다.<br />
-3. **Proxy** 클래스에는 서비스 개체를 가리키는 참조 필드가 있습니다. 프록시가 처리(e.g., lazy initialization, logging, access control, caching, etc.)를 완료한 후 요청을 서비스 개체에 전달합니다.<br />일반적으로 프록시는 서비스 개체의 전체 수명 주기를 관리합니다.<br />
+1. **Service Interface**는 서비스의 인터페이스를 선언합니다. Proxy는 서비스 개체로 위장할 수 있도록 이 인터페이스를 따라야 합니다.<br /><br />
+2. **Service**는 몇 가지 유용한 비즈니스 로직을 제공하는 클래스입니다.<br /><br />
+3. **Proxy** 클래스에는 서비스 개체를 가리키는 참조 필드가 있습니다. 프록시가 처리(e.g., lazy initialization, logging, access control, caching, etc.)를 완료한 후 요청을 서비스 개체에 전달합니다.<br />일반적으로 프록시는 서비스 개체의 전체 수명 주기를 관리합니다.<br /><br />
 4. **Client**는 동일한 인터페이스를 통해 서비스와 프록시 모두에서 작업해야 합니다. 이렇게 하면 서비스 개체가 필요한 모든 코드에 프록시를 전달할 수 있습니다.
 
 ## How to Implement
@@ -20,9 +20,9 @@ Proxy
 4. 클라이언트가 프록시를 받을지 실제 서비스를 받을지 결정하는 생성 방법을 도입하는 것을 고려하십시오. 이것은 프록시 클래스의 간단한 정적 메서드 또는 본격적인 팩토리 메서드가 될 수 있습니다.<br /><br />
 5. 서비스 개체에 대해 지연 초기화 구현을 고려하십시오.
 ## Pros and Cons
-<span style="color:green;">O</span>. 클라이언트가 알지 못하는 상태에서 서비스 개체를 제어할 수 있습니다.<br />
-<span style="color:green;">O</span>. 클라이언트가 신경 쓰지 않을 때 서비스 개체의 수명 주기를 관리할 수 있습니다.<br />
-<span style="color:green;">O</span>. 프록시는 서비스 개체가 준비되지 않았거나 사용할 수 없는 경우에도 작동합니다.<br />
-<span style="color:green;">O</span>. Open/Closed Principle. 서비스나 클라이언트를 변경하지 않고 새 프록시를 도입할 수 있습니다.<br />
-<span style="color:red;">X</span>. 많은 새 클래스를 도입해야 하므로 코드가 더 복잡해질 수 있습니다.<br />
+<span style="color:green;">O</span>. 클라이언트가 알지 못하는 상태에서 서비스 개체를 제어할 수 있습니다.<br /><br />
+<span style="color:green;">O</span>. 클라이언트가 신경 쓰지 않을 때 서비스 개체의 수명 주기를 관리할 수 있습니다.<br /><br />
+<span style="color:green;">O</span>. 프록시는 서비스 개체가 준비되지 않았거나 사용할 수 없는 경우에도 작동합니다.<br /><br />
+<span style="color:green;">O</span>. Open/Closed Principle. 서비스나 클라이언트를 변경하지 않고 새 프록시를 도입할 수 있습니다.<br /><br />
+<span style="color:red;">X</span>. 많은 새 클래스를 도입해야 하므로 코드가 더 복잡해질 수 있습니다.<br /><br />
 <span style="color:red;">X</span>. 서비스의 응답이 지연될 수 있습니다.

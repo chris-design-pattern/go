@@ -6,7 +6,14 @@ Factory Method
 ![img.png](https://refactoring.guru/images/patterns/content/factory-method/factory-method-en-2x.png)
 
 ## Structure
-![](https://media.vlpt.us/images/chrishan/post/c5d690ef-e770-4f21-a3f2-1150f104c7c8/Screen%20Shot%202021-05-09%20at%2013.21.19.png)
+![](https://images.velog.io/images/chrishan/post/c529a953-0e13-4282-a743-037b08ac0e5c/structure-indexed-2x-2.png)
+1. **Product**는 작성자와 해당 하위 클래스가 생성할 수 있는 모든 개체에 공통적인 인터페이스를 선언합니다.<br /><br />
+2. **Concrete Products**는 제품 인터페이스의 다른 구현입니다.<br /><br />
+3. **Creator** 클래스는 새 제품 개체를 반환하는 팩토리 메서드를 선언합니다. 이 메서드의 반환 유형이 제품 인터페이스와 일치하는 것이 중요합니다.<br /><br />
+   Factory Method를 추상으로 선언하여 모든 하위 클래스가 자체 버전의 메서드를 구현하도록 할 수 있습니다. 대안으로, 기본 팩토리 메소드는 일부 기본 제품 유형을 리턴할 수 있습니다.<br /><br />
+   이름에도 불구하고 제품 제작은 제작자의 주요 책임이 아닙니다. 일반적으로 Creator 클래스에는 제품과 관련된 핵심 비즈니스 로직이 이미 있습니다. 팩토리 메소드는 이 로직을 구체적인 제품 클래스에서 분리하는 데 도움이 됩니다. 다음은 유추입니다. 대규모 소프트웨어 개발 회사에는 프로그래머를 위한 교육 부서가 있을 수 있습니다. 그러나 회사 전체의 주요 기능은 프로그래머를 생산하는 것이 아니라 여전히 코드를 작성하는 것입니다.<br /><br />
+4. **Concrete Creators**는 기본 팩토리 메서드를 재정의하므로 다른 유형의 제품을 반환합니다.<br /><br />
+   팩토리 메서드는 항상 새 인스턴스를 만들 필요가 없습니다. 또한 캐시, 개체 풀 또는 다른 소스에서 기존 개체를 반환할 수도 있습니다.
 
 ## How to implement
 1. 모든 제품이 동일한 인터페이스를 따르도록합니다. 이 인터페이스는 모든 제품에서 의미있는 메서드를 선언해야합니다.<br /><br />

@@ -7,8 +7,12 @@ Abstract Factory
 ![](https://images.velog.io/images/chrishan/post/64b62edd-e018-409d-a397-d017cf95a317/abstract-factory-en-2x.png)
 
 ## Structure
-
-![](https://images.velog.io/images/chrishan/post/6bad100f-5534-4414-bd93-4a114f9e5f9f/Screen%20Shot%202021-03-21%20at%2015.34.04.png)
+![](https://images.velog.io/images/chrishan/post/85b01a09-3c9e-42b2-8f52-5ce4611d84ab/structure-indexed-2x.png)
+1. **Abstract Products**는 제품군을 구성하는 별개의 관련 제품 세트에 대한 인터페이스를 선언합니다.<br /><br />
+2. **Concrete Products**는 변형별로 그룹화된 추상 제품의 다양한 구현입니다. 각 Abstract Product(의자/소파)은 주어진 모든 변형(Victorian/Modern)으로 구현되어야 합니다.<br /><br />
+3. **Abstract Factory** 인터페이스는 각각의 추상 제품을 생성하기 위한 메소드 세트를 선언합니다.<br /><br />
+4. **Concrete Factories**는 추상 팩토리의 생성 방법을 구현합니다. 각 concrete factory는 제품의 특정 변형에 해당하며 해당 제품 변형만 생성합니다.<br /><br />
+5. Concrete Factory는 concrete product를 인스턴스화하지만 생성 방법의 signature는 해당 _abstract_ product를 반환해야 합니다. 이렇게 하면 팩토리를 사용하는 클라이언트 코드가 팩토리에서 가져온 제품의 특정 변형에 연결되지 않습니다. **Client**는 추상 인터페이스를 통해 개체와 통신하는 한 구체적인 공장/제품 변형으로 작업할 수 있습니다.
 
 ## How to Implement
 

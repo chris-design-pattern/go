@@ -5,7 +5,12 @@ Decorator
 ![](https://images.velog.io/images/chrishan/post/89334069-9752-43af-8558-939ee858c635/decorator-2x.png)
 
 ## Structure
-![](https://images.velog.io/images/chrishan/post/990a48d5-b994-4bdc-bbac-bf70b50a84ac/Screen%20Shot%202021-07-03%20at%2010.15.05.png)
+![](https://images.velog.io/images/chrishan/post/abfe5da5-af80-4559-98a7-5a0fb06500cc/structure-indexed-2x.png)
+1. **Component**는 래퍼와 래핑된 객체 모두에 대한 공통 인터페이스를 선언합니다.<br /><br />
+2. **Concrete Component**는 래핑되는 객체의 클래스입니다. 데코레이터가 변경할 수 있는 기본 동작을 정의합니다.<br /><br />
+3. **Base Decorator** 클래스에는 래핑된 객체를 참조하기 위한 필드가 있습니다. 필드의 유형은 concrete component와 데코레이터를 모두 포함할 수 있도록 component 인터페이스로 선언되어야 합니다. 기본 데코레이터는 모든 작업을 래핑된 객체에 위임합니다.<br /><br />
+4. **Concrete Decorator**는 component에 동적으로 추가할 수 있는 추가 동작을 정의합니다. Concrete Decorator는 기본 데코레이터의 메서드를 재정의하고 부모 메서드를 호출하기 전이나 후에 해당 동작을 실행합니다.<br /><br />
+5. **Client**는 component 인터페이스를 통해 모든 객체와 함께 작동하는 한 여러 계층의 데코레이터로 component를 래핑할 수 있습니다.
 
 ## How to Implement
 1. 비즈니스 도메인이 여러 선택적 레이어가 있는 기본 구성 요소로 표시 될 수 있는지 확인 하십시오.<br /><br />

@@ -13,10 +13,10 @@ Adapter
 이 구현에서는 개체 구성 원칙을 사용합니다. Adapter는 한 개체의 interface를 구현하고 다른 개체를 wrapping합니다. 널리 사용되는 모든 프로그래밍 언어로 구현할 수 있습니다.
 ![](https://images.velog.io/images/chrishan/post/a5567231-f0e0-4d49-aba4-084748672390/structure-object-adapter-indexed-2x.png)
 
-1. **Client**는 프로그램의 기존 비지니스 로직을 포함하는 클래스입니다.
-2. **Client interface**는 다른 클래스가 client 코드와 협업 할 수 있도록 따라야 하는 프로토콜을 설명합니다.
-3. **Service**는 유용한 클래스(보통 타사 또는 레거시)입니다. Interface가 호환되지 않기 때문에 client는 이 클래스를 직접 사용할 수 없습니다.
-4. **Adapter**는 Client와 Service 모두에서 작동 할 수 있는 클랙스입니다. 서비스 객체를 wrapping하면서 client interface를 구현합니다. Adapter는 adapter interface를 통해 client로부터 호출을 수신하고 이를 이해 할 수 있는 형식으로 wrapping된 service 개체에 대한 호출로 변환합니다.
+1. **Client**는 프로그램의 기존 비지니스 로직을 포함하는 클래스입니다.<br /><br />
+2. **Client interface**는 다른 클래스가 client 코드와 협업 할 수 있도록 따라야 하는 프로토콜을 설명합니다.<br /><br />
+3. **Service**는 유용한 클래스(보통 타사 또는 레거시)입니다. Interface가 호환되지 않기 때문에 client는 이 클래스를 직접 사용할 수 없습니다.<br /><br />
+4. **Adapter**는 Client와 Service 모두에서 작동 할 수 있는 클랙스입니다. 서비스 객체를 wrapping하면서 client interface를 구현합니다. Adapter는 adapter interface를 통해 client로부터 호출을 수신하고 이를 이해 할 수 있는 형식으로 wrapping된 service 개체에 대한 호출로 변환합니다.<br /><br />
 5. Client 코드는 client interface를 통해 adapter와 함께 작동하는 한 구체적인 Adapter 클래스에 연결되지 않습니다. 덕분에 기존 client 코드를 손상시키지 않고 새로운 유형의 adapter를 프로그램에 도입 할 수 있습니다. 이는 service 클래스의 interface가 변경되거나 교체 될 때 유용 할 수 있습니다. Client 코드를 변경하지 않고 새 adapter 클래스를 만들 수 있습니다.
 #### Class adapter
 

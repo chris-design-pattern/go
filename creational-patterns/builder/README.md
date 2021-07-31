@@ -6,7 +6,12 @@ Builder
 ![](https://images.velog.io/images/chrishan/post/d9052f52-ee81-4a7f-b135-f3caf4c02766/builder-en-2x.png)
 
 ## Structure
-![](https://images.velog.io/images/chrishan/post/fc13077e-5333-4650-b01a-11b5845cf444/Screen%20Shot%202021-05-09%20at%2011.44.07.png)
+![](https://images.velog.io/images/chrishan/post/5b35956f-e375-47ff-981c-35f89fea6a29/structure-indexed-2x.png)
+1. **Builder** 인터페이스는 모든 유형의 빌더에 공통적인 Product 구성 단계를 선언합니다.<br /><br />
+2. **Concrete Builder**는 생성 단계의 다양한 구현을 제공합니다. Concreate Builder는 공통 인터페이스를 따르지 않는 Product를 생산할 수 있습니다.<br /><br />
+3. **Product**는 결과 객체입니다. 다른 빌더에 의해 생성된 Product는 동일한 클래스 계층 또는 인터페이스에 속할 필요가 없습니다.<br /><br />
+4. **Director** 클래스는 생성 단계를 호출하는 순서를 정의하므로 Product의 특정 구성을 만들고 재사용할 수 있습니다.<br /><br /> 
+5. **Client**는 빌더 개체 중 하나를 감독과 연결해야 합니다. 일반적으로 director 생성자의 매개변수를 통해 한 번만 수행됩니다. 그런 다음 director는 모든 추가 구성에 해당 빌더 개체를 사용합니다. 그러나 클라이언트가 빌더 개체를 director의 production method에 전달할 때 대체 접근 방식이 있습니다. 이 경우 director와 함께 무언가를 만들 때마다 다른 빌더를 사용할 수 있습니다.
 
 ## How to Implement
 1. 사용 가능한 모든 제품 표현을 구축하기위한 공통 구성 단계를 명확하게 정의 할 수 있는지 확인하십시오. 그렇지 않으면 패턴 구현을 진행할 수 없습니다.<br /><br />

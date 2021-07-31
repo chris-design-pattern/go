@@ -7,12 +7,16 @@ Prototype
 ![](https://images.velog.io/images/chrishan/post/2f76162b-0a2b-4bd6-b155-aedab4937ce0/prototype-2x.png)
 
 ## Structure
-
 ##### Basic implementation
-![](https://images.velog.io/images/chrishan/post/e3bf03e1-b135-412b-bde1-37d023293e91/Screen%20Shot%202021-05-16%20at%209.20.04.png)
+![](https://images.velog.io/images/chrishan/post/1d0f30b8-5d0e-46a4-99df-0ec1ad3b0fb3/structure-indexed-2x.png)
+1. **Prototype** 인터페이스는 복제 방법을 선언합니다. 대부분의 경우 단일 `복제` 방법입니다.<br /><br />
+2. **Concrete Prototype** 클래스는 복제 방법을 구현합니다. 원본 객체의 데이터를 복제하는 것 외에도 연결된 객체 복제, 재귀 종속성 풀기 등과 관련된 복제 프로세스의 일부 극단적인 경우를 처리할 수도 있습니다.<br /><br />
+3. **Client**는 프로토타입 인터페이스를 따르는 모든 객체의 복사본을 생성할 수 있습니다.
 
+---
 ##### Prototype registry implementation
-![](https://images.velog.io/images/chrishan/post/4014a845-0cce-40ed-b03d-1bc355852c73/Screen%20Shot%202021-05-16%20at%209.21.30.png)
+![](https://images.velog.io/images/chrishan/post/f4feca08-2769-45cd-bf2a-df63594f6e3f/structure-prototype-cache-indexed-2x.png)
+1. **Prototype Registry**는 자주 사용하는 프로토타입에 쉽게 접근할 수 있는 방법을 제공합니다. 복사할 준비가 된 미리 빌드된 개체 집합을 저장합니다. 가장 간단한 프로토타입 레지스트리는 `name → prototype` 해시 맵입니다. 그러나 단순한 이름보다 더 나은 검색 기준이 필요한 경우 훨씬 더 강력한 버전의 레지스트리를 구축할 수 있습니다.
 
 ## How to Implement
 
