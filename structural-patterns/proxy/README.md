@@ -1,7 +1,6 @@
 Proxy
 ---
 ## Intent
-## Intent
 **Proxy**는 다른 개체에 대한 대체 또는 자리 표시자를 제공할 수 있는 구조적 디자인 패턴입니다. 프록시는 원래 개체에 대한 액세스를 제어하므로 요청이 원래 개체에 전달되기 전이나 후에 수행할 수 있습니다.
 
 ![](https://images.velog.io/images/chrishan/post/752f5439-089e-467e-b399-11c9a5ba5a45/proxy-2x.png)
